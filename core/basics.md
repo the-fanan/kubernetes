@@ -33,3 +33,8 @@ This is an abstraction over pods. They make it more convienient to work with pod
 STAETFUL SET
 ============
 This is like Deployment but for Stateful pods. However, it is way more stressful to work with Stateful Set than to work with Deployments.
+
+
+REPLICA SET
+================
+This is responsible for creating multiple copies of a pod across nodes. You never have to interact directly with it, the Deployment automatically configures the replicaset for you.
