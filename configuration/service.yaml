@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service 
+spec:
+  selector:
+    app: nginx # create connection with pods labelled app:nginx
+  ports:
+  - protocol: TCP
+    port: 8080 # port service is reachable at to external sources
+    targetPort: 8080 # port service forwards requests to.

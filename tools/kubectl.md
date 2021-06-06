@@ -19,4 +19,5 @@ USEFUL COMMANDS
 - `kubectl describe pod {POD_NAME}` shows you state changes going on in the pod
 - `kubectl exec -it {POD_NAME} -- bin/bash` logs you into the interactive terminal of a pod
 - `kubectl apply -f PATH_TO_CONFIG_FILE` creates all the components stated in the file and creates a cluster from that
+- `kubectl delete -f PATH_TO_CONFIG_FILE` delete a componenet via it's configuration file
 - You can run `kubectl [...] -h` to get more info on commands and their optional arguments
