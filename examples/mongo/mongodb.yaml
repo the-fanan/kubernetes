@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb-deployment 
+  labels:
+    app: mongodb # label of the deployment
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: mongodb # match all pods labeled app:nginx to this deployment
+  template:
+    metadata:
+      labels:
+        app: mongodb # all pods created under this template should be labelled app:nginx
+    spec:
+      containers:
+      - name: mongodb # name of this container in a pod
+        image: mongo
+        ports:
+        - containerPort: 27017
+        env:
+        - name: MONGO_INITDB_ROOT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret
+              key: mongo-root-username
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret
+              key: mongo-root-password
+---
+# The --- means a new config file. YAML allows multiple config files in one file
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-db-internal-service 
+spec:
+  selector:
+    app: mongodb # create connection with pods labelled app:mongodb
+  ports:
+  - protocol: TCP
+    port: 27017 # port service is reachable at to external sources
+    targetPort: 27017 # port service forwards requests to.
+
+
+

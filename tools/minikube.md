@@ -6,3 +6,4 @@ USEFUL COMMANDS
 ================
 - `minikube start` starts your cluster
 - `minikube status` get status of cluster
+- `minikube service NAME_OF_SERVICE` will assign an external IP to an external service
