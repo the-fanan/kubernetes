@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1beta1
+king: Ingress
+metadat:
+  name: nginx-ingress
+  namespace: default
+spec:
+  tls:
+  - hosts:
+    - sub1.your-domain.com
+    secretName: NAME_OF_SECRET
+    - your-domain.com 
+    secretName: NAME_OF_SECRET
+  rules:
+  - host: sub1.your-domain.com
+    http:
+      paths:
+      - backend:
+          serviceName: api-service
+          servicePort: 8080
+  - host: your-domain.com
+    http:
+      paths:
+      - backend:
+          serviceName: frontend-service
+          servicePort: 4000
+
+

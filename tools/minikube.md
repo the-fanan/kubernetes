@@ -7,3 +7,4 @@ USEFUL COMMANDS
 - `minikube start` starts your cluster
 - `minikube status` get status of cluster
 - `minikube service NAME_OF_SERVICE` will assign an external IP to an external service
+- `minikube addons enable ingress` setups an ingress controller for your minikube. check the pods in kube-system namespace (`kubectl get pods -n kube-system`) to verify the nginx ingress controller was setup

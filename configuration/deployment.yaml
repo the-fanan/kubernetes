@@ -2,10 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment 
+  namespace: default
   labels:
     app: nginx # label of the deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector: 
     matchLabels:
       app: nginx # match all pods labeled app:nginx to this deployment

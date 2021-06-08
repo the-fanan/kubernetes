@@ -14,6 +14,14 @@ INGRESS
 ===========
 Services only grant IPs and are usually linked to a port. Ingress provides a friendly user facing URL that links the external world to your external services.
 
+INGRESS CONTROLLER
+====================
+Ingress component alone cannot actually complete the process of providing a friendly user facing URL that links the external world to your cluster. An actual implementation is required and this is called an Ingress Controller. It is a pod or set of pods that process the ingress rules.
+
+If you are using a cloud provider, they come with out of the box load balancers and allow you to easily setup your ingress controller. However, if you are using a bare metal server, you'll have to set it up manually.
+[Ingress Controller Setup Via Providers](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/)
+[Ingress Controller Setup Bare Metal](https://kubernetes.github.io/ingress-nginx/deploy/baremetal/)
+
 CONFIG MAP
 ============
 Contains configuration data like URLs and other environment variables so that they can be easily udated without having to rebuild, pull images, and restart pods/containers for minor updates.
