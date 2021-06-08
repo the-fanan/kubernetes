@@ -1,6 +1,6 @@
 KOPS
 =========
-This is a tool that allows you to make clusters on the cloud. It is integrated with both AWS and Google Cloud.
+This is a tool that allows you to make k8s clusters on popular cloud providers. It is integrated with both AWS and Google Cloud (in beta).
 
 Note on using Kops:
 ======================
