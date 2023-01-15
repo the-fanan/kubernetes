@@ -21,3 +21,4 @@ USEFUL COMMANDS
 - `kubectl apply -f PATH_TO_CONFIG_FILE` creates or updates all the components stated in the file
 - `kubectl delete -f PATH_TO_CONFIG_FILE` delete a componenet via it's configuration file
 - You can run `kubectl [...] -h` to get more info on commands and their optional arguments
+- `kubectl -n kube-system get po`

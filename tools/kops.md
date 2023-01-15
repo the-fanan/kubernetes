@@ -28,3 +28,6 @@ USEFUL COMMANDS
 - `kops export kubecfg --state=s3://{S3_BUCKET}` export cluster configuration
 
 - incase user credentials are not returned `kops export kubecfg --admin` (!!UNSAFE FOR PRODUCTION!!)
+
+- `kops validate cluster --wait 10m`
+- `kops delete cluster --name ${NAME} --yes`
